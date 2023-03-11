@@ -48,3 +48,44 @@ app.use(connectLiveReload());
 app.use(express.urlencoded({ extended: true }));
 // Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
 app.use(methodOverride('_method'));
+
+
+/* Mount routes
+--------------------------------------------------------------- */
+app.get('/', function (req, res) {
+    db.Song.find({ isFeatured: true })
+        .then(songs => {
+            res.render('home', {
+                songs: songs
+            })
+        })
+});
+
+// When a GET request is sent to `/seed`, the pets collection is seeded
+app.get('/seed', function (req, res) {
+    // Remove any existing pets
+    db.Song.deleteMany({})
+        .then(removedSongs => {
+            console.log(`Removed ${removedSongs.length} songs`)
+
+            // Seed the pets collection with the seed data
+            db.Song.insertMany(db.seedSongs)
+                .then(addedSongs => {
+                    console.log(`Added ${addedSongs.length} songs to be adopted`)
+                    res.json(addedSongs)
+                })
+        })
+});
+
+// Render the about page
+app.get('/about', function (req, res) {
+    res.render('about')
+});
+
+// This tells our app to look at the `controllers/pets.js` file 
+// to handle all routes that begin with `localhost:3000/pets`
+app.use('/songs', songsCtrl)
+
+// This tells our app to look at the `controllers/applications.js` file 
+// to handle all routes that begin with `localhost:3000/applications`
+app.use('/reviews', reviewsCtrl)
