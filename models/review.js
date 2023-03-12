@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  reviwerName: {
+  reviewerName: {
     type: String,
     required: true
   },
@@ -15,4 +15,4 @@ const reviewSchema = new mongoose.Schema({
   },
 });
 
-module.exports = applicationSchema;
+module.exports = reviewSchema;

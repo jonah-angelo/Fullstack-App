@@ -89,3 +89,14 @@ app.use('/songs', songsCtrl)
 // This tells our app to look at the `controllers/applications.js` file 
 // to handle all routes that begin with `localhost:3000/applications`
 app.use('/reviews', reviewsCtrl)
+
+// The "catch-all" route: Runs for any other URL that doesn't match the above routes
+app.get('*', function (req, res) {
+    res.render('404')
+});
+
+/* Tell the app to listen on the specified port
+--------------------------------------------------------------- */
+app.listen(process.env.PORT, function () {
+    console.log('Express is listening to port', process.env.PORT);
+});
