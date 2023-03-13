@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: `${pet.name} | Mongo Music`}) %>
+    <link rel="stylesheet" href="/styles/pet-details.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div>
+        <img src="<%= song.photo %>">
+
+        <h2 class="song-name"><%= song.name %></h2>
+
+        <section>
+        </section>
+
+        <section class="actions">
+            <button class="btn"><a href="/pets/<%= song._id %>/edit">Edit</a></button>
+            <form method="POST" action="/pets/<%= song._id %>?_method=DELETE">
+                <input class="btn" type="submit" value="Delete" />
+            </form>
+            <button class="btn"><a href="/reviews/new/<%= song._id %>">Leave a review</a></button>
+        </section>
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

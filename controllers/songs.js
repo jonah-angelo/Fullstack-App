@@ -23,7 +23,7 @@ const song = require('../models/song')
 router.get('/', function (req, res) {
     db.Song.find({})
         .then(songs => {
-            res.render('song-index', {
+            res.render('discover-page', {
                 songs: songs
             })
         })
@@ -81,8 +81,8 @@ router.put('/:id', (req, res) => {
 // Destroy Route (DELETE/Delete): This route deletes a pet document 
 // using the URL parameter (which will always be the pet document's ID)
 router.delete('/:id', (req, res) => {
-    db.Pet.findByIdAndRemove(req.params.id)
-        .then(() => res.redirect('/pets'))
+    db.Song.findByIdAndRemove(req.params.id)
+        .then(() => res.redirect('/songs'))
 })
 
 
