@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
             for (let song of songs) {
                 flatList.push(...song.reviews)
             }
-            res.render('reviews/app-index.ejs', {
+            res.render('reviews/review-index.ejs', {
                 apps: flatList
             })
         })
@@ -40,7 +40,7 @@ router.get('/', (req, res) => {
 router.get('/new/:songId', (req, res) => {
     db.Song.findById(req.params.petId)
         .then(song => {
-            res.render('reviews/new-form', { song: song })
+            res.render('reviews/new-review', { song: song })
         })
 })
 

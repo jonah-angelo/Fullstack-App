@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `${pet.name} | Mongo Music`}) %>
+    <%- include('./partials/head.ejs', {title: `${song.name} | Mongo Music`}) %>
     <link rel="stylesheet" href="/styles/pet-details.css">
 </head>
 
@@ -13,13 +13,14 @@
         <img src="<%= song.photo %>">
 
         <h2 class="song-name"><%= song.name %></h2>
+        <p class="song-description"> <%= song.description %></p>
 
         <section>
         </section>
 
         <section class="actions">
-            <button class="btn"><a href="/pets/<%= song._id %>/edit">Edit</a></button>
-            <form method="POST" action="/pets/<%= song._id %>?_method=DELETE">
+            <button class="btn"><a href="/songs/<%= song._id %>/edit">Edit</a></button>
+            <form method="POST" action="/songs/<%= song._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
             </form>
             <button class="btn"><a href="/reviews/new/<%= song._id %>">Leave a review</a></button>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: `Add a Song | Mongo Music`}) %>
+    <link rel="stylesheet" href="/styles/edit-song.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <h1>Add Song</h1>
+
+    <form method="POST" action="/songs">
+        <!-- Name input -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <!-- Photo input -->
+        <label for="photo">Album Cover:</label>
+        <input type="text" id="photo" name="photo" required>
+        <br>
+        
+        <!-- Description input -->
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <br>
+
+        <!-- Artist name input -->
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" required>
+        <br>
+
+        <!-- Genre input -->
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
+        <br>
+
+        <!-- Artist name input -->
+        <label for="dateReleased">Relase Date:</label>
+        <input type="number" id="dateReleased" name="dateReleased" required>
+        <br>
+        <input type="submit" value="Add Song">
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

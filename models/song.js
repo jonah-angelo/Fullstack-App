@@ -8,7 +8,7 @@ const songSchema = new mongoose.Schema({
     photo: { type: String, required: true },
     artist: {type: String, required: true},
     genre: {type: String, required: true},
-    description: { type: String, required: true },
+    description: { type: Array, required: true },
     isFeatured: { type: Boolean, default: false },
     dateReleased: { type: Number, required: true},
     reviews: [reviewSchema]

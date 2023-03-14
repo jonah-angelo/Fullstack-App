@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `Edit ${Song.name} | Mongo Music`}) %>
+    <%- include('./partials/head.ejs', {title: `Edit ${song.name} | Mongo Music`}) %>
     <link rel="stylesheet" href="/styles/edit-song.css">
 </head>
 
@@ -14,13 +14,24 @@
     <form method="POST" action="/songs/<%= song._id %>?_method=PUT">
         <!-- Name input -->
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<%= pet.name %>" required>
+        <input type="text" id="name" name="name" value="<%= song.name %>" required>
         <br>
 
         <!-- Photo input -->
         <label for="photo">Album Cover:</label>
         <input type="text" id="photo" name="photo" value="<%= song.photo %>" required>
         <br>
+        
+        <!-- Description input -->
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required><%= song.description %></textarea>
+        <br>
+
+        <!-- Artist name input -->
+        <label for="artist-name">Artist:</label>
+        <textarea id="description" name="description" required><%= song.artist %></textarea>
+        <br>
+        
         <!-- Description input -->
         <label for="description">Description:</label>
         <textarea id="description" name="description" required><%= song.description %></textarea>

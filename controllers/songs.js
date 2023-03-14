@@ -32,7 +32,7 @@ router.get('/', function (req, res) {
 // New Route (GET/Read): This route renders a form 
 // which the user will fill out to POST (create) a new location
 router.get('/new', (req, res) => {
-    res.render('new-form')
+    res.render('new-song')
 })
 
 // Create Route (POST/Create): This route receives the POST request sent from the new route,
@@ -60,7 +60,7 @@ router.get('/:id', function (req, res) {
 router.get('/:id/edit', (req, res) => {
     db.Song.findById(req.params.id)
         .then(song => {
-            res.render('edit-form', {
+            res.render('edit-song', {
                 song: song
             })
         })
@@ -75,7 +75,7 @@ router.put('/:id', (req, res) => {
         req.body,
         { new: true }
     )
-        .then(pet => res.redirect('/songs/' + pet._id))
+        .then(song => res.redirect('/songs/' + song._id))
 })
 
 // Destroy Route (DELETE/Delete): This route deletes a pet document 

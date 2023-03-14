@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'Furever Friends'}) %>
-    <link rel="stylesheet" href="/styles/pet-index.css">
+    <%- include('./partials/head.ejs', {title: 'Mongo Music'}) %>
+    <link rel="stylesheet" href="/styles/discover-page.css">
+    <script src="/public/scripts/carousel.js" defer></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     </section>
 
     <main>
-        <section class="listings">
+        <section class="Songs">
             <ul>
                 <% for (let song of songs) { %>
                 <li>
@@ -30,7 +31,6 @@
             </ul>
         </section>
     </main>
-
     <%- include('./partials/footer.ejs') %>
 </body>
 

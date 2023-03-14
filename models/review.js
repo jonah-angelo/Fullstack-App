@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  reviewerName: {
+  title: {
     type: String,
     required: true
   },
-  reviewDate: {
-    type: Date,
-    default: Date.now
-  },
-  review: {
+  content: {
     type: String,
     required: true
   },
-});
+  reviewer: {
+    type: String,
+    required: true
+  }
+},
+{ timestamps: true}
+);
 
 module.exports = reviewSchema;
 

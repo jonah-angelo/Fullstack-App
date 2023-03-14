@@ -10,7 +10,31 @@
     <%- include('./partials/nav.ejs') %>
 
     <main>
-        <h3>You've reached the home page</h3>
+        <section class="hero">
+            <h2>Welcome to Mongo Music!</h2>
+            <a href="/songs" class="btn"></a>
+        </section>
+        </section>
+
+        <section class="featured-pets">
+            <h2>Featured Songs</h2>
+            <ul class="song-grid">
+                <% for (let song of songs) { %>
+                <li>
+                    <figure>
+                        <img src="<%= song.photo %>">
+                    </figure>
+                    <figcaption>
+                        <div class="featured-info">
+                            <h3><%= song.name %></h3>
+                            <p>Release Date: <%= song.dateReleased %></p>
+                        </div>
+                        <a href="/songs/<%= song._id %>" class="btn">Learn More</a>
+                    </figcaption>
+                </li>
+                <% } %>
+            </ul>
+        </section>
     </main>
 
     <%- include('./partials/footer.ejs') %>
