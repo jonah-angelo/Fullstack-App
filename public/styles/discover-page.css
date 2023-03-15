@@ -6,21 +6,21 @@ main {
 }
 
 
-.listings {
+.songs {
     margin-top: 50px;
 }
 
-.listings h1 {
+.songs h1 {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.listings ul {
+.songs ul {
     list-style: none;
     padding: 0;
 }
 
-.listings li {
+.songs li {
     margin-bottom: 40px;
     border: 2px solid #ccc;
     padding: 20px;
@@ -35,7 +35,7 @@ img {
     box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);;
 }
 
-.listings li img {
+.songs li img {
     max-width: 100%;
     height: auto;
 }
@@ -44,17 +44,17 @@ figcaption {
     text-align: left;
 }
 
-.listings li h4 {
+.songs li h4 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-.listings li p {
+.songs li p {
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-.listings li a {
+.songs li a {
     background-color: #333;
     color: #fff;
     font-size: 18px;
@@ -67,6 +67,13 @@ figcaption {
     text-decoration: none;
 }
 
-.listings li a:hover {
+.songs li a:hover {
     background-color: #555;
+}
+
+@media only screen and (min-width: 500px) {
+    .img {
+        max-width: 10vw;
+        max-height: 10vh;
+    }
 }

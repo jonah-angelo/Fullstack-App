@@ -20,7 +20,7 @@ const db = require('../models')
 /* Routes
 --------------------------------------------------------------- */
 // Index Route (All Reviews): 
-// GET localhost:3000/applications/
+// GET localhost:3000/reviews/
 router.get('/', (req, res) => {
     db.Song.find({}, { reviews: true, _id: false })
         .then(songs => {
@@ -30,15 +30,15 @@ router.get('/', (req, res) => {
             for (let song of songs) {
                 flatList.push(...song.reviews)
             }
-            res.render('reviews/review-index.ejs', {
-                apps: flatList
+            res.render('reviews/review-index', {
+                reviews: flatList
             })
         })
 });
 
 // New Route: GET localhost:3000/reviews/new/:songId
-router.get('/new/:songId', (req, res) => {
-    db.Song.findById(req.params.petId)
+router.get('/new-review/:songId', (req, res) => {
+    db.Song.findById(req.params.songId)
         .then(song => {
             res.render('reviews/new-review', { song: song })
         })
@@ -48,10 +48,10 @@ router.get('/new/:songId', (req, res) => {
 router.post('/create/:songId', (req, res) => {
     db.Song.findByIdAndUpdate(
         req.params.songId,
-        { $push: { applications: req.body } },
+        { $push: { reviews: req.body } },
         { new: true }
     )
-        .then(() => res.redirect('/reviews'))
+        .then(() => res.redirect(`/songs/${req.params.songId}`))
 });
 
 // Show Route: GET localhost:3000/reviews/:id

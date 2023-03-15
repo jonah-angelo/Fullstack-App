@@ -49,7 +49,7 @@ const songs = [
         photo: 'https://i1.sndcdn.com/artworks-000029723179-knqqe8-t500x500.jpg',
         artist: 'Mac DeMarco',
         description: '“Freaking Out the Neighborhood” is specifically addressed to the vocalist\'s mother, with Mac DeMarco noting in the process that he is the “first son” of his mom. And what he\'s doing is sorta apologizing along the lines of being a dumba-s',
-        isFeatured: false,
+        isFeatured: true,
         genre: 'Indie',
         dateReleased: 2012
     },
@@ -58,7 +58,7 @@ const songs = [
         photo: 'https://i.discogs.com/Ap2k7KZ5S2Mrp8s5QCF_HtE_f4Wbp0MTmWiO79ARVWQ/rs:fit/g:sm/q:90/h:549/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg5MTY3/NTYtMTQ3MTQyNTM1/My0yNDQ1LmpwZWc.jpeg',
         artist: 'Tame Impala',
         description: '“Feels Like We Only Go Backwards” is the second single from Tame Impalas second album, Lonerism. It was released on October 1, 2012, four days ahead of the full-length release.' ,
-        isFeatured: false,
+        isFeatured: true,
         genre: 'Indie',
         dateReleased: 2012
     },
@@ -67,7 +67,7 @@ const songs = [
         photo: 'https://i.scdn.co/image/ab67616d0000b273bdcea025a483b9642f17a9f8',
         artist: 'Bee Gees',
         description: 'This disco track was featured on the soundtrack for the movie Saturday Night Fever, and became a radio staple in the years following the release of the film. Along with Stayin\' Alive, it became one of the Bee Gees most well known songs from their late 70s resurgence in popularity.' ,
-        isFeatured: false,
+        isFeatured: true,
         genre: 'Disco',
         dateReleased: 1977
     },

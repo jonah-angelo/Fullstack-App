@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/head.ejs', {title: `${song.name} | Mongo Music`}) %>
-    <link rel="stylesheet" href="/styles/pet-details.css">
+    <link rel="stylesheet" href="/styles/song-details.css">
 </head>
 
 <body>
@@ -15,17 +15,24 @@
         <h2 class="song-name"><%= song.name %></h2>
         <p class="song-description"> <%= song.description %></p>
 
-        <section>
-        </section>
-
         <section class="actions">
             <button class="btn"><a href="/songs/<%= song._id %>/edit">Edit</a></button>
             <form method="POST" action="/songs/<%= song._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
             </form>
-            <button class="btn"><a href="/reviews/new/<%= song._id %>">Leave a review</a></button>
+            <button class="btn"><a href="/reviews/new-review/<%= song._id %>">Leave a review</a></button>
         </section>
-
+        <section class="review-section">
+                <% for (let review of song.reviews) { %>
+                    <figure>
+                        <figcaption class="">
+                            <h4><%= review.title %></h4>
+                            <p><%= review.reviewer %></p>
+                            <p><%= review.content %></p>
+                        </figcaption>
+                    </figure>
+                <% } %>
+        </section>
     </div>
 
     <%- include('./partials/footer.ejs') %>
