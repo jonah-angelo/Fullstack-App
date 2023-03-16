@@ -8,7 +8,7 @@ div {
     border-radius: 25px;
 }
 
-img {
+.song-photo {
     width: 60%;
     min-width: 300px;
     height: 30%;
@@ -50,4 +50,35 @@ strong {
 
 .btn a {
     color: #fff;
+}
+
+/* Reviews Section */
+
+.review-section {
+    background-color: rgb(28, 28, 28);
+    display: block;
+    padding: 10px;
+    overflow-y: scroll;
+    border: 2px double grey;
+    height: 10vh;
+    margin-top: 20px;
+}
+
+.reviews {
+    border: 2px solid rgb(207, 207, 207);
+    padding: 10px 5px;
+    margin-top: 2px;
+}
+
+.review-title {
+    font-size: 1.3rem;
+}
+
+.review-section h4, h3, p {
+    font-size: 15px;
+}
+
+
+.grey{
+    color: grey;
 }

@@ -12,11 +12,11 @@
     <main>
         <section class="hero">
             <h2>Welcome to Mongo Music!</h2>
-            <a href="/songs" class="btn"></a>
+            <a href="/songs" class="btn discoverbtn">Discover All</a>
         </section>
         </section>
 
-        <section class="featured-pets">
+        <section class="featured-songs">
             <h2>Featured Songs</h2>
             <ul class="song-grid">
                 <% for (let song of songs) { %>
@@ -29,7 +29,7 @@
                             <h3><%= song.name %></h3>
                             <p>Release Date: <%= song.dateReleased %></p>
                         </div>
-                        <a href="/songs/<%= song._id %>" class="btn">Learn More</a>
+                        <a href="/songs/<%= song._id %>" class="btn" id="learn-more">Learn More</a>
                     </figcaption>
                 </li>
                 <% } %>

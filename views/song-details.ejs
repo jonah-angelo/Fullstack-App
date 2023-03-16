@@ -10,7 +10,7 @@
     <%- include('./partials/nav.ejs') %>
 
     <div>
-        <img src="<%= song.photo %>">
+        <img class="song-photo" src="<%= song.photo %>">
 
         <h2 class="song-name"><%= song.name %></h2>
         <p class="song-description"> <%= song.description %></p>
@@ -22,13 +22,16 @@
             </form>
             <button class="btn"><a href="/reviews/new-review/<%= song._id %>">Leave a review</a></button>
         </section>
+        <br>
+
+        <h1 class="review-title">Reviews: </h1>
         <section class="review-section">
                 <% for (let review of song.reviews) { %>
                     <figure>
-                        <figcaption class="">
-                            <h4><%= review.title %></h4>
-                            <p><%= review.reviewer %></p>
-                            <p><%= review.content %></p>
+                        <figcaption class="reviews">
+                            <h4><span class="grey">Subject: </span><%= review.title %></h4>
+                            <h3><span class="grey">User: </span><%= review.reviewer %></h3>
+                            <p><span class="grey">Review: </span><%= review.content %></p>
                         </figcaption>
                     </figure>
                 <% } %>
