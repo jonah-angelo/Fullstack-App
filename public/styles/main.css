@@ -24,6 +24,14 @@ section ul {
     list-style: none;
 }
 
+.nav-item {
+    transition: all 0.2s ease;
+}
+
+.nav-item {
+    
+}
+
 /* Header styles */
 header {
     display: flex;
@@ -127,7 +135,6 @@ footer ul {
 
     header {
         display: inline-block;
-        border: 2px solid red;
         width: 100vw;
     }
 

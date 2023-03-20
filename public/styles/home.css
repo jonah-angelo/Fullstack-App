@@ -38,7 +38,7 @@ figcaption:hover {
 }
 
 .song-grid img {
-    height: 110%;
+    height: 25vh;
     width: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
@@ -76,5 +76,10 @@ figcaption {
     }
     .featured-info h3 {
         font-size: 15px;
+    }
+
+    .song-grid img {
+        height: 400px;
+        width: 100%;
     }
 }

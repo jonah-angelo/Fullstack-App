@@ -82,3 +82,15 @@ strong {
 .grey{
     color: grey;
 }
+
+@media (max-width: 600px) and (min-width: 390px) {
+    .btn{
+        /* border: 2px solid red; */
+        padding: 5px;
+        width: 20vw;
+    }
+
+    .btn a {
+        font-size: 14px;
+    }
+}
